@@ -6,7 +6,7 @@ import streamlit as st
 PAGES = {
     "Steam Customer Segmentation": steam_segment,
     "Indie Success Prediction": steam_prediction,
-    "Steam Game Recommender": steam_recommender
+    "Steam Game Recommender (This page takes time to run. Be patient!)": steam_recommender
 }
 
 st.sidebar.title('Navigation')

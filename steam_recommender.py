@@ -11,9 +11,17 @@ def app():
 	### 1. Upload dataframe with clustered user data
 	df_recommender = pd.read_csv('steam_recommender.csv')
 	df_recommender.set_index('game',inplace=True)
-
-	search = "Broken Age"
-	# user_input = st.text_input("label goes here", 'default_value_goes_here')
+	
+	# 2. User input of game
+	def user_input_features():
+		search = st.text_input("Search Game Title")
+		data = {'search': search}
+		features = pd.DataFrame(data, index=[0])
+		return features
+	
+	user_input = user_input_features()
+	
+	search = user_input['search'][0]
 	count = 0
 	for title in steam.loc[steam['game'].str.contains(search), 'game']:
 		st.write(title)

@@ -25,7 +25,6 @@ def app():
 	count = 0
 	for title in steam.loc[steam['game'].str.contains(search), 'game']:
 		st.write(title)
-		#st.write(f"Average Play Time (Hrs): {round(pivot.loc[title, :].mean(), 2)}")
 		st.write(f"Number of Players: {pivot.T[title].count()}")
 		st.write("10 closest titles:")
 		st.write(round(df_recommender[title].sort_values(ascending=False)[1:11], 2))
@@ -33,14 +32,5 @@ def app():
 			break
 		else:
 			count+=1
-	    #st.write('')
-	    #st.write("10 closest titles:")
-	    
-	    #st.write('-----------------------------------------------')
-	    #st.write('')
-	
-	# Stanley Parable
-	# Portal
-	# Broken Age
-	# Half-Life
+
 	    

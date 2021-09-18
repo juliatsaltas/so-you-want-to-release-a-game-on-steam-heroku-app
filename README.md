@@ -15,7 +15,3 @@ This project combines clustering, classification and recommender methods to help
 Check out the app here: https://steam-streamlit-app.herokuapp.com/
 
 Check out the video presentation here: https://www.youtube.com/watch?v=4HPAJcZNFt4
-
-
-
-P

@@ -106,13 +106,13 @@ def app():
 
         features = pd.DataFrame(data, index=[0])
         return features
-        input_df = user_input_features()
+    
 
     # Combines user input features with entire penguins dataset
     # This will be useful for the encoding phase
     steam_raw = pd.read_csv('steam_indie_clean.csv')
     steam = steam_raw.drop(columns=['label'])
-    df = pd.concat([input_df,steam],axis=0)
+    # df = steam #pd.concat([input_df,steam],axis=0)
 
     # Encoding of ordinal features
     # https://www.kaggle.com/pratik1120/penguin-dataset-eda-classification-and-clustering
@@ -136,16 +136,16 @@ def app():
     #     df = pd.concat([df,dummy], axis=1)
     #     del df[col]
 
-    df = df[:1] # Selects only the first row (the user input data)
+    # df = df[:1] # Selects only the first row (the user input data)
 
     # Displays the user input features
-    st.subheader('User Input features')
+    # st.subheader('User Input features')
 
-    if uploaded_file is not None:
-        st.write(df)
-    else:
-        st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
-        st.write(df)
+    # if uploaded_file is not None:
+    #     st.write(df)
+    # else:
+    #     st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
+    #     st.write(df)
 
     # Reads in saved classification model
     load_clf = pickle.load(open('2indie_steam_clf.pkl', 'rb'))

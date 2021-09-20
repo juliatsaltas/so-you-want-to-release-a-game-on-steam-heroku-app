@@ -7,10 +7,23 @@ from sklearn.ensemble import RandomForestClassifier
 def app():
     st.write("""
     # Steam Success Prediction App - Indie Edition!
-
-    Just finished making the next big hit in gaming? This app predicts if your new game will be sucessful on Steam!
-
     Data obtained from the Steam Store raw dataset from [Kaggle](https://www.kaggle.com/nikdavis/steam-store-raw) by Nik Davis.
+    
+    Just finished making the next big hit in gaming?
+
+    Have you ever asked yourself:
+    What are the chances that you can sell 20,000+ copies if you make a single-player, action-adventure game for pc and mac, release a video trailer, and have a few steam achievements?
+
+    This app predicts if your new game will be sucessful on Steam!
+
+    Use the left-hand toolbar to select tags that are included in your game. Selecting 1 in the dropdown menu indicates that the tag is on. 
+
+    Play around with a combination of features to see the probability of success of your indie game.
+
+    In this case, success (1) is the probability that your game will have more than 20,000 users purchase your game.
+
+
+
     """)
 
     st.sidebar.header('User Input Features')

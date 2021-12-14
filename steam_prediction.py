@@ -107,7 +107,7 @@ def app():
     # This will be useful for the encoding phase
     steam_raw = pd.read_csv('steam_indie_clean.csv')
     steam = steam_raw.drop(columns=['label'])
-    df = steam #pd.concat([input_df,steam],axis=0) # Enabled Dec 14 2021
+    df = pd.concat([input_df,steam],axis=0) # Enabled Dec 14 2021 was: df = steam
 
     # Encoding of ordinal features
     # https://www.kaggle.com/pratik1120/penguin-dataset-eda-classification-and-clustering

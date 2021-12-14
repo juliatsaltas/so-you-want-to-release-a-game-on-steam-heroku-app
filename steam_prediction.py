@@ -133,7 +133,9 @@ def app():
          df = pd.concat([df,dummy], axis=1)
          del df[col]
     df = df[:1] # Selects only the first row (the user input data)
-
+    
+    #enabled Dec 14 2021
+    st.write(df)
     # Displays the user input features
     # st.subheader('User Input features')
 
@@ -151,9 +153,9 @@ def app():
     prediction_proba = load_clf.predict_proba(df)
 
 
-    # st.subheader('Prediction')
-    # label_success = np.array(['<20,000 downloads','20,000+ downloads'])
-    # st.write(label_success[prediction])
+    st.subheader('Prediction')
+    label_success = np.array(['<20,000 downloads','20,000+ downloads'])
+    st.write(label_success[prediction])
 
     st.subheader('Prediction Probability')
     st.write(prediction_proba)

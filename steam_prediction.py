@@ -103,7 +103,7 @@ def app():
         return features
     
     input_df = user_input_features() # Enabled Dec 14 2021
-
+    st.write(input_df)
     # Combines user input features with entire penguins dataset
     # This will be useful for the encoding phase
     steam_raw = pd.read_csv('steam_indie_clean.csv')

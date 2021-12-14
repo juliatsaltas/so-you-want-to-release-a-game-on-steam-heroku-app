@@ -63,11 +63,6 @@ def app():
 
 
 
-        # bill_length_mm = st.sidebar.slider('Bill length (mm)', 32.1,59.6,43.9)
-        # bill_depth_mm = st.sidebar.slider('Bill depth (mm)', 13.1,21.5,17.2)
-        # flipper_length_mm = st.sidebar.slider('Flipper length (mm)', 172.0,231.0,201.0)
-        # body_mass_g = st.sidebar.slider('Body mass (g)', 2700.0,6300.0,4207.0)
-
         data = {'single_player': single_player, 
                 'multi_player' : multi_player,
                 'online_multi_player' : online_multi_player,
@@ -112,7 +107,7 @@ def app():
     # This will be useful for the encoding phase
     steam_raw = pd.read_csv('steam_indie_clean.csv')
     steam = steam_raw.drop(columns=['label'])
-    # df = steam #pd.concat([input_df,steam],axis=0)
+    df = steam #pd.concat([input_df,steam],axis=0) # Enabled Dec 14 2021
 
     # Encoding of ordinal features
     # https://www.kaggle.com/pratik1120/penguin-dataset-eda-classification-and-clustering
@@ -131,12 +126,12 @@ def app():
     'racing', 'sports', 'violent', 'gore', 'sexual_content',
     'nudity', 'education', 'self_published']
 
-    # for col in encode:
-    #     dummy = pd.get_dummies(df[col], prefix=col)
-    #     df = pd.concat([df,dummy], axis=1)
-    #     del df[col]
-
-    # df = df[:1] # Selects only the first row (the user input data)
+    # enabled Dec 14 2021
+    for col in encode:
+         dummy = pd.get_dummies(df[col], prefix=col)
+         df = pd.concat([df,dummy], axis=1)
+         del df[col]
+    df = df[:1] # Selects only the first row (the user input data)
 
     # Displays the user input features
     # st.subheader('User Input features')

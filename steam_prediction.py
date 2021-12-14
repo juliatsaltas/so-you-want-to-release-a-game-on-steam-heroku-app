@@ -102,6 +102,7 @@ def app():
         features = pd.DataFrame(data, index=[0])
         return features
     
+    input_df = user_input_features() # Enabled Dec 14 2021
 
     # Combines user input features with entire penguins dataset
     # This will be useful for the encoding phase
